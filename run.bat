@@ -1,0 +1,1 @@
+set debug=library:* & npm run devstart
