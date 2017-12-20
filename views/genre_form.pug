@@ -1,0 +1,18 @@
+extends layout
+
+block content   
+    h1 #{title}
+
+    form(method='POST' action='')
+        div.row
+            div.form-group.col-md-6
+                label(for='name') Genre:
+                input#name.form-control(required='true', type='text', placeholder='Genre Name eg: Fantsy, Horror etc', name='name', value=(undefined===genre ? '' : genre.name))
+        div.row
+            div.col-md-6
+                button.btn.btn-wd.btn-primary(type='submit') Submit
+
+    if errors
+        ul
+            for error in errors
+                li=error.msg

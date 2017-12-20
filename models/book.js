@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Genre = require('./genre');
 var Schema = mongoose.Schema;
 
 var BookSchema = new Schema(
@@ -16,6 +17,5 @@ var BookSchema = new Schema(
 BookSchema.virtual('url').get(function() {
     return '/catalog/book/' + this._id;
 });
-
 
 module.exports = mongoose.model('Book', BookSchema);
